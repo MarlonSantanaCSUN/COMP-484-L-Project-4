@@ -4,9 +4,14 @@ const originText = document.querySelector("#origin-text p").innerHTML;
 const resetButton = document.querySelector("#reset");
 const theTimer = document.querySelector(".timer");
 
+let timer = [0, 0, 0]; // [minutes, seconds, hundredths]
+let interval;
+let timerRunning = false;
 
 // Add leading zero to numbers 9 or below (purely for aesthetics):
-
+function leadingZero(time) {
+    return time <= 9 ? "0" + time : time;
+}
 
 // Run a standard minute/second/hundredths timer:
 
