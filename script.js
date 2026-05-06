@@ -14,7 +14,24 @@ function leadingZero(time) {
 }
 
 // Run a standard minute/second/hundredths timer:
+function runTimer() {
+    timer[2]++;
 
+    if (timer[2] === 100) {
+        timer[2] = 0;
+        timer[1]++;
+    }
+
+    if (timer[1] === 60) {
+        timer[1] = 0;
+        timer[0]++;
+    }
+
+    theTimer.innerHTML =
+        leadingZero(timer[0]) + ":" +
+        leadingZero(timer[1]) + ":" +
+        leadingZero(timer[2]);
+}
 
 // Match the text entered with the provided text on the page:
 
